@@ -16,10 +16,6 @@ import { path } from "../utils";
 import login from "../containers/Auth/Login";
 import Header from "./Header/Header";
 
-
-
-
-
 class App extends Component {
   handlePersistorState = () => {
     const { persistor } = this.props;
@@ -83,7 +79,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     started: state.app.started,
-    isLoggedIn: state.admin.isLoggedIn,
+    isLoggedIn: state.user.isLoggedIn,
   };
 };
 
