@@ -16,7 +16,7 @@ class UserManage extends Component {
   // 2. Did mount call api to set state
   // 3. Render(re-render)
   async componentDidMount() {
-    await this.getAllUsers();
+    await this.getAllUsersFromReact();
   }
 
   getAllUsersFromReact = async () => {
@@ -44,7 +44,7 @@ class UserManage extends Component {
       if(response&&response.errCode!==0){
         alert(response.errMessage)
       }else{
-        await this.getAllUserFromReact();
+        await this.getAllUsersFromReact();
         this.setState({
           isOpenModalUser: false
         })
