@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { connectRouter } from "connected-react-router";
 import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
@@ -17,7 +18,8 @@ const userPersistConfig = {
   whitelist: ["isLoggedIn", "userInfo"],
 };
 
-export default (history) => combineReducers({
+export default (history) =>
+  combineReducers({
     router: connectRouter(history),
     user: persistReducer(userPersistConfig, userReducer),
     app: appReducer,
